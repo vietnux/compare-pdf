@@ -1,0 +1,44 @@
+<div id="login" class="body">
+   <div class="login-content">
+      <h1 data-lang="app_name">POD Crawler</h1>
+      <br>
+      <img src="../assets/logo.png" title="Chuẩn bị vào ứng dụng" class="logo">
+      <!-- <h2>Login</h2> -->
+      <form>
+         <div class="panel_field1b">
+            <div class="panel_field2"><span id="labelWidth">Email</span></div>
+            <div class="panel_field2" contenteditable='true'>
+               <input type="email" id="email" data-keyboardtype="number" data-change='changeObjectWidth' class="panel_textbox">
+               <input type="hidden" id="objectWidthCommaResidualData">
+            </div>
+         </div>
+
+         <div class="panel_field1b">
+            <div class="panel_field2"><span id="labelWidth">Password</span></div>
+            <div class="panel_field2" contenteditable='true'>
+               <input type="password" id="password" data-keyboardtype="number" data-change='changeObjectWidth' class="panel_textbox">
+               <input type="hidden" id="objectWidthCommaResidualData">
+            </div>
+         </div>
+
+         <div class="panel_fieldseparator">
+            <hr class="panel_hr">
+         </div>
+         <!-- <div class="panel_field5">
+            <input type="button" class="panel_button" id="resetScale" onclick="isLogin =true;userinit()" value="Login">
+         </div> -->
+         <div class="panel_field5">
+            <input type="button" class="panel_button" id="resetScale" onclick="onRegis();" value="Register">
+         </div>
+
+         <div class="panel_field5">
+            <b onclick="() => this.props.navigation.navigate('ForgotPassword')">Quên mật khẩu?</b>
+         </div>
+
+         <div class="panel_field5">
+            <b onclick="isLogin =true; userinit();"> Đăng nhập </b>
+         </div>
+         <!-- <div class="panel_field6"></div> -->
+      </form>
+   </div>
+</div>

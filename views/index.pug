@@ -1,0 +1,77 @@
+doctype html
+
+html
+   head
+      title #{title}
+      link(rel='stylesheet' href='/css/style.css')
+      meta(name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=no,maximum-scale=1.0, user-scalable=no, viewport-fit=cover")
+      link(rel='stylesheet' type="text/css" href='/css/style.css')
+      script(type='text/javascript' src='/js/jquery.min.js')
+      script(type='text/javascript' src='/js/jquery.mousewheel.min.js')
+      script(type='text/javascript' src='/js/exif.js')
+      script(type="text/javascript" src='/js/core.js')
+      script(type='text/javascript' src='/js/lang.js')
+      script(type='text/javascript' src='/js/actions.js')
+
+body
+
+   div#header
+      span#title Image Comparison Tool
+      <label><input id="displayDetails" type="checkbox" checked="">Display details</label>
+      <label><input id="displayExif" type="checkbox" checked="">Display EXIF</label>
+      <label><input id="pixelated" type="checkbox" checked="">Pixelated</label>
+      button#stack Hold to swap
+      button#play Play/Pause
+
+   div#content
+      div#left.block
+         div.center Drag and drop image or video here!
+         button.zoom 100 %
+         
+      div#mid.block
+         div.center Drag and drop image or video here!
+         button.zoom 100 %
+         
+      div#right.block
+         div.center
+         img.main
+         div.details
+         div#resemble
+            Ignore: label <input type="radio" checked="" name="resemble-method">Nothing
+            label <input type="radio" name="resemble-method">Less
+            label <input type="radio" name="resemble-method">Colors<br>
+            Color: label <input type="radio" checked="" name="resemble-color">Flat
+            label <input type="radio" name="resemble-color">Move
+            label <input type="radio" name="resemble-color">Flat diff
+            label <input type="radio" name="resemble-color">Move diff
+            
+   div#loading.loading_splash
+      div.loading_splash_container
+         div.lds-spinner
+            div
+            div
+            div
+            div
+            div
+            div
+            div
+            div
+            div
+            div
+            div
+            div
+
+
+   div.vkeyboard#vkeyboard(style="display: none")
+   div#_ovl
+
+   script(type='text/javascript' src='/js/js-keyboard/vkeyboard.js')
+   script(type='text/javascript' src='/js/drag.js')
+   script(type='text/javascript' src='/js/fonts.js')
+   script(type='text/javascript' src='/js/FileReader.js')
+   script(type='text/javascript' src='/popup/overlays.js')
+   script(type='text/javascript' src='/js/resemble.js')
+   script(type='text/javascript' src='/js/compareImages.js')
+
+   link(rel='stylesheet' type="text/css" href='/popup/overlay.css')
+   link(rel='stylesheet' type="text/css" href='/js/js-keyboard/vkeyboard.css')

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+
+<head>
+   <meta charset="utf-8">
+   <title>PDF Compare</title>
+   <!--
+        Customize this policy to fit your own app's needs. For more guidance, see:
+            https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
+        Some notes:
+            * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+                * Enable inline JS: add 'unsafe-inline' to default-src
+        -->
+   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=no,maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+
+   <meta name="format-detection" content="telephone=no">
+   <meta name="msapplication-tap-highlight" content="no">
+   <meta name="color-scheme" content="light dark">
+   <meta name="theme-color" content="#ededed" />
+   <!-- <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" /> -->
+
+   <link type="image/x-icon" rel="icon" href="logo.png">
+
+   <link rel="stylesheet" href="css/style.css">
+
+   <script type="text/javascript" src="js/jquery.min.js"></script>
+   <script type='text/javascript' src="js/jquery.mousewheel.min.js"></script>
+   <script type='text/javascript' src="js/exif.js"></script>
+   <script type="text/javascript" src="js/core.js"></script>
+   <script type="text/javascript" src="js/lang.js"></script>
+   <script type="text/javascript" src="js/actions.js"></script>
+
+
+
+</head>
+
+<body>
+   <div id="header">
+      <span id="title">Image Comparison Tool</span>
+      <label><input id="displayDetails" type="checkbox" checked="">Display details</label>
+      <label><input id="displayExif" type="checkbox" checked="">Display EXIF</label>
+      <label><input id="pixelated" type="checkbox" checked="">Pixelated</label>
+      <button id="stack">Hold to swap</button>
+      <button id="play">Play/Pause</button>
+   </div>
+
+   <div id="content">
+      <div id="left" class="block">
+         <div class="center">Drag and drop image or video here!</div>
+         <button class="zoom">100 %</button>
+      </div>
+      <div id="mid" class="block">
+         <div class="center">Drag and drop image or video here!</div>
+         <button class="zoom">100 %</button>
+      </div>
+      <div id="right" class="block">
+         <div class="center"></div>
+         <img class="main"></img>
+         <div class="details"></div>
+         <div id="resemble">
+            Ignore: <label><input type="radio" checked="" name="resemble-method">Nothing</label>
+            <label><input type="radio" name="resemble-method">Less</label>
+            <label><input type="radio" name="resemble-method">Colors</label><br>
+            Color: <label><input type="radio" checked="" name="resemble-color">Flat</label>
+            <label><input type="radio" name="resemble-color">Move</label>
+            <label><input type="radio" name="resemble-color">Flat diff</label>
+            <label><input type="radio" name="resemble-color">Move diff</label>
+         </div>
+      </div>
+      <div>
+
+         <div id="loading" class="loading_splash">
+            <div class="loading_splash_container">
+               <div class="lds-spinner">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                  <div></div>
+               </div>
+            </div>
+         </div>
+
+         <div class="vkeyboard" id="vkeyboard" style="display: none"></div>
+         <div id="_ovl"></div>
+
+         <script type="text/javascript" src="js/js-keyboard/vkeyboard.js"></script>
+         <script type="text/javascript" src="js/drag.js"></script>
+         <script src="js/fonts.js"></script>
+
+         <script type="text/javascript" src="js/FileReader.js"></script>
+         <script type="text/javascript" src="popup/overlays.js"></script>
+
+         <link rel="stylesheet" href="popup/overlay.css">
+         <link rel="stylesheet" href="js/js-keyboard/vkeyboard.css">
+         <script type="text/javascript" src="js/compareImages.js"></script>
+</body>
+
+</html>
